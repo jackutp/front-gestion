@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/src/context/AuthContext";
-import { NavigationProvider, useNavigation } from "@/src/context/NavigationContext";
-import Sidebar from "@/src/components/Sidebar";
+import { useAuth } from "@/context/AuthContext";
+import { NavigationProvider, useNavigation } from "@/context/NavigationContext";
+import Sidebar from "@/components/Sidebar";
 import PerfilPage from "./perfil/page";
 import SolicitudesPage from "./solicitudes/page";
 import CambiosPage from "./cambios/page";

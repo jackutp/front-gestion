@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@/src/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import { User, ClipboardList, Clock, CheckCircle } from "lucide-react";
 
 const stats = [
@@ -19,9 +19,10 @@ export default function PerfilPage() {
           <User size={36} className="text-amber-500" />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100">{user?.nombre}</h2>
-          <p className="text-amber-500 font-medium">{user?.rol}</p>
+          <h2 className="text-2xl font-bold text-zinc-100">{user?.nombre} {user?.apellido}</h2>
+          <p className="text-amber-500 font-medium">{user?.tipo}</p>
           <p className="text-zinc-400 text-sm">{user?.email}</p>
+          <p className="text-zinc-500 text-xs">DNI: {user?.dni}</p>
         </div>
       </div>
 

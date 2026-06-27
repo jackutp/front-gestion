@@ -2,11 +2,11 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/src/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import { UtensilsCrossed } from "lucide-react";
 
 function LoginForm() {
-  const [usuario, setUsuario] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ function LoginForm() {
     e.preventDefault();
     setError("");
     setLoading(true);
-    const ok = await login(usuario, password);
+    const ok = await login({ email, password });
     setLoading(false);
     if (ok) {
       router.push("/perfil");
@@ -39,13 +39,14 @@ function LoginForm() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-1">Usuario</label>
+            <label className="block text-sm font-medium text-zinc-300 mb-1">Correo electrónico</label>
             <input
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full bg-neutral-900 border border-zinc-700 rounded-lg px-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-              placeholder="Ingrese su usuario"
+              placeholder="Ingrese su correo"
             />
           </div>
 

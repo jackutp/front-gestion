@@ -1,8 +1,8 @@
 "use client";
 
 import { User, ClipboardList, RefreshCw, AlertTriangle } from "lucide-react";
-import { useNavigation, type Section } from "@/src/context/NavigationContext";
-import { useAuth } from "@/src/context/AuthContext";
+import { useNavigation, type Section } from "@/context/NavigationContext";
+import { useAuth } from "@/context/AuthContext";
 import SidebarItem from "./SidebarItem";
 import { LogOut } from "lucide-react";
 
